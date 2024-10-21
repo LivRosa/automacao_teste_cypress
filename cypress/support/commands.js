@@ -1,0 +1,8 @@
+Cypress.Commands.add('fillMandatoryFieldsAndSubmit', function () { // tradução: preenche os campos obrigatórios e submete 
+    cy.get('#firstName').type('Lívia')
+    cy.get('#lastName').type('Rosa')
+    cy.get('#email').type('livia.rosaraujo2@gmail.com')
+    cy.get('#open-text-area').type('teste')
+    cy.contains('button', 'Enviar').click()
+
+})
