@@ -220,9 +220,9 @@
       .should('have.value', longText)
     })
 
-    it('Make an HTTP request.', () => {//make an HTTP request
+    it.only('Make an HTTP request.', () => {//make an HTTP request
       cy.request('https://cac-tat.s3.eu-central-1.amazonaws.com/index.html')
-        .should(function(response) {
+        .should((response) => {
             const { status, statusText, body} = response //desestruturou o statusText e o body 
             expect(status).to.equal(200)
             expect(statusText).to.equal('OK')
