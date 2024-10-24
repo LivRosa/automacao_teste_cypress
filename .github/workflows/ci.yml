@@ -1,5 +1,5 @@
-name: End-to-end tests 
-on: [push]
+name: End-to-end tests #pipeline de integração continua 
+on: [push] #será disparado sempre que houver git push
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04

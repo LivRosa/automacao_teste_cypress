@@ -5,10 +5,9 @@
       // beforeEach -> antes de cada teste, faça o comando que está aqui dentro
       cy.visit('src/index.html')/// está acessando um arquivo do computador: dentro de "scr" -> "index.html"
     })
-    it('checks the title of the application', function() { /// caso de teste; "verifica o título da aplicação
+    it('checks the title of the application', function() { 
       cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT') 
-// cy.title -> para buscar o título da aplicação(aba do navegador);.should -> verifica se um valor atender a uma condição específica 
-// 'be.equal' -> verifica se o valor que estamos testando é igual ao valor esperado 
+
     })
 
     it('Fills in the required fields and submits the form', function () { // it.only -> para executar somente esse teste; "preenche os campos obrigatórios e envia o formulário"
@@ -18,9 +17,9 @@
       cy.get('#lastName').type('Rosa')
       cy.get('#email').type('livia.rosaraujo2@gmail.com')// o # na frente significa que é um ID
       cy.get('#open-text-area').type(longText, {delay: 2})
-      ///utilizamos a varial que criamos "longText" e o "delay:2" para controlar o tempo de resultado; podemos colocar qualquer valor ali 
-      cy.contains('button', 'Enviar').click()// encontrou um botão que tenha o texto "enviar" e clicou nele 
-      cy.get('.success').should('be.visible') // AQUI COLOCOU UM "." NA FRENTE POIS É UMA CLASSE
+      ///utilizamos a variavel que criamos "longText" e o "delay:2" para controlar o tempo de resultado; podemos colocar qualquer valor ali 
+      cy.contains('button', 'Enviar').click()
+      cy.get('.success').should('be.visible') // "." CLASSE
     })
 
     it('Displays an error message when submitting the form with an improperly formatted email', function () { // exibe uma mensagem de erro ao enviar o formulário com um e-mail formatado incorretamente
@@ -137,7 +136,7 @@
 
     })
 
-    it('Select a file simulating a drag-and-drop action', function (){//Select a file simulating a drag-and-drop action. - arrastar o arquivo
+    it('Select a file simulating a drag-and-drop action', function (){// - arrastar o arquivo
       cy.get('input[type="file"]')
       .should('not.have.value')
       .selectFile('cypress/fixtures/example.json', {action:'drag-drop'} )
